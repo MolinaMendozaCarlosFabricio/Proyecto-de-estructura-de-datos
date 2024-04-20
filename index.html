@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque vehicular - Loging</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        #login-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #login-container input {
+            width: 200px;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #login-container button {
+            width: 150px;
+            height: 35px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #admin-menu,
+        #employee-menu {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #admin-menu .container,
+        #employee-menu {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #admin-menu h2,
+        #employee-menu h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #admin-menu input,
+        #employee-menu input,
+        #admin-menu button,
+        #employee-menu button {
+            width: 200px;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #admin-menu button,
+        #employee-menu button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #admin-menu button:hover,
+        #employee-menu button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Iniciar sesión</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Iniciar sesión</button>
+    </div>
+    
+    <div id="admin-menu" class="hidden">
+        <div class="container">
+            <h2>Registro de Vehículos</h2>
+            
+            <input type="text" id="marca" placeholder="Marca">
+            <input type="text" id="modelo" placeholder="Modelo">
+            <input type="text" id="color" placeholder="Color">
+            <input type="text" id="placa" placeholder="Placa">
+            <input type="number" id="kilometraje" placeholder="Kilometraje">
+            <button onclick="registrarVehiculo()">Registrar</button>
+            <br>
+            <input type="text" id="busqueda" placeholder="Buscar por placa">
+            <button onclick="buscarVehiculo()">Buscar</button>
+            <div id="resultado"></div>
+        </div>
+        <!-- Interfaz para el menú del administrador -->
+    </div>
+    
+    <div id="employee-menu" class="hidden">
+        <h2>Menu de mantenimiento</h2>
+        <button onclick="mostrarVehiculosQueNecesitanMantenimiento()">Mostrar</button>
+        <div id="mantenimiento-container"></div>
+        <!-- Interfaz para el menú del empleado -->
+    </div>
+    
+    <script src="interfazLogin.js"></script>
+</body>
+</html>
